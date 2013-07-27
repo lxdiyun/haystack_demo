@@ -1,0 +1,6 @@
+*.swp
+*.pyc
+database.sqlite3
+static/
+media/
+haystack_demo/xapian_index/

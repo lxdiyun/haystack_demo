@@ -1,0 +1,10 @@
+{% extends 'utils/site_base.html' %}
+
+{% block title %} note {{ note.id }} {% endblock %}
+
+{% block content %}
+<p><h4>{{ note.title }}</h4></p>
+<p>{{ note.pub_date }} by <em>{{ note.user }}</em></p>
+<hr>
+<p>{{ note.body }}</p>
+{% endblock %}
