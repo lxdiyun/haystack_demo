@@ -4,7 +4,7 @@ from random import randrange
 from datetime import datetime
 
 
-def gen_random_string(dicts_array, size):
+def gen_random_string_en(dicts_array, size):
     string = ""
     dicts_size = len(dicts_array)
 
@@ -14,18 +14,44 @@ def gen_random_string(dicts_array, size):
     return string
 
 
-def gen(count):
-    f = open("dict.txt", "r")
-    dicts = [line.strip() for line in f]
-    f.close()
+def gen_random_string_zh(dicts_array, size):
+    string = ""
+    dicts_size = len(dicts_array)
+
+    while size > len(string):
+        string += dicts_array[randrange(dicts_size)]
+        if 0 == (len(string) % randrange(2, 5)):
+            string += " "
+
+    return string
+
+
+def gen(count, dicts, get_string_function):
     user = User.objects.all()[0]
+    date_now = datetime.now()
 
     while 0 < count:
         print(count)
         count -= 1
         note = Note()
         note.user = user
-        note.pub_date = datetime.now()
-        note.title = gen_random_string(dicts, 100)
-        note.body = gen_random_string(dicts, 1000)
+        note.pub_date = date_now
+        note.title = get_string_function(dicts, randrange(100))
+        note.body = get_string_function(dicts, randrange(500, 1000))
         note.save()
+
+
+def gen_en(count):
+    f = open("dict.txt", "r")
+    dicts = [line.strip() for line in f]
+    f.close()
+
+    gen(count, dicts, gen_random_string_en)
+
+
+def gen_zh(count):
+    f = open("zh_dict.txt", "r")
+    dicts = [line.strip() for line in f]
+    f.close()
+
+    gen(count, dicts, gen_random_string_zh)
