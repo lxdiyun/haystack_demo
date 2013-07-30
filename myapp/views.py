@@ -1,7 +1,7 @@
 from django.views.generic import DetailView
 from models import Note
 from haystack.views import SearchView
-from forms import MyAPPSearchForm
+from utils.forms import MultiSearchForm
 
 
 class NoteDetailView(DetailView):
@@ -12,7 +12,7 @@ class NoteDetailView(DetailView):
 
 class NoteSearchView(SearchView):
     def __init__(self, *args, **kwargs):
-        super(NoteSearchView, self).__init__(form_class=MyAPPSearchForm,
+        super(NoteSearchView, self).__init__(form_class=MultiSearchForm,
                                              *args,
                                              **kwargs)
 
