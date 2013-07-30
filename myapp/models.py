@@ -14,7 +14,7 @@ class Note(models.Model):
         return reverse("note_detail", kwargs={'pk': self.id})
 
     def get_segmented_text(self):
-        return mmseg_segment(self.title) + mmseg_segment(self.body)
+        return mmseg_segment(self.title) + " " + mmseg_segment(self.body)
 
     def __unicode__(self):
         return self.title

@@ -1,6 +1,7 @@
 {% extends 'utils/site_base.html' %}
 
 {% load highlight %}
+{% load utils_highlight %}
 
 {% block title %}Search{% endblock %}
 
@@ -23,9 +24,9 @@
 
 	{% for result in page.object_list %}
 	<p>
-	<a href="{{ result.object.get_absolute_url }}">{{ result.object.title }}</a>
+	<a href="{{ result.object.get_absolute_url }}">{% highlight result.object.title with query %}</a>
 	</p>
-	<p>{% highlight result.object.body with query max_length 999 %}</p>
+	<p>{% summary_highlight result.object.body with query %}</p>
 	{% empty %}
 	<p>No results found.</p>
 	{% endfor %}

@@ -165,3 +165,5 @@ HAYSTACK_CONNECTIONS = {
         'PATH': os.path.join(os.path.dirname(__file__), 'xapian_index'),
     },
 }
+
+HAYSTACK_CUSTOM_HIGHLIGHTER = "utils.highlighting.CompleteHighlighter"

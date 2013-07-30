@@ -15,3 +15,8 @@ class NoteSearchView(SearchView):
         super(NoteSearchView, self).__init__(form_class=MyAPPSearchForm,
                                              *args,
                                              **kwargs)
+
+    def build_page(self):
+        (paginator, page) = super(NoteSearchView, self).build_page()
+
+        return (paginator, page)
