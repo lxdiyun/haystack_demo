@@ -4,6 +4,9 @@ haystack_demo
 Requirements
 ------------
 * [mmseg](https://pypi.python.org/pypi/mmseg/1.3.0)
+* [xapian](http://xapian.org/)
+* [haystack](http://haystacksearch.org/)
+* [xapian_backend](https://github.com/notanumber/xapian-haystack)
 
 ```shell
 ./manage.py syndb

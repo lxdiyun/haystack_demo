@@ -1,8 +1,8 @@
 from models import Note
 from django.contrib.auth.models import User
 from random import randrange
-from datetime import datetime
 from sys import stdout
+from django.utils.timezone import now
 
 
 def gen_random_string_en(dicts_array, size):
@@ -29,7 +29,7 @@ def gen_random_string_zh(dicts_array, size):
 
 def gen(count, dicts, get_string_function):
     user = User.objects.all()[0]
-    date_now = datetime.now()
+    date_now = now()
     total = count
 
     while 0 < count:
