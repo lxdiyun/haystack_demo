@@ -1,7 +1,7 @@
 from django.views.generic import DetailView
 from models import Note
 from haystack.views import SearchView
-from utils.forms import MultiSearchForm
+from utils.haystack.forms import MultiSearchForm
 
 
 class NoteDetailView(DetailView):

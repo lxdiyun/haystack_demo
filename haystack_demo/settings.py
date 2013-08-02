@@ -166,4 +166,4 @@ HAYSTACK_CONNECTIONS = {
     },
 }
 
-HAYSTACK_CUSTOM_HIGHLIGHTER = "utils.highlighting.CompleteHighlighter"
+HAYSTACK_CUSTOM_HIGHLIGHTER = "utils.haystack.highlighting.CompleteHighlighter"
