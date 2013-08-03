@@ -159,10 +159,16 @@ LOGGING = {
 }
 
 import os
+#HAYSTACK_CONNECTIONS = {
+#    'default': {
+#        'ENGINE': 'xapian_backend.XapianEngine',
+#        'PATH': os.path.join(os.path.dirname(__file__), 'xapian_index'),
+#    },
+#}
 HAYSTACK_CONNECTIONS = {
     'default': {
-        'ENGINE': 'xapian_backend.XapianEngine',
-        'PATH': os.path.join(os.path.dirname(__file__), 'xapian_index'),
+        'ENGINE': 'utils.haystack.backends.zh_whoosh_backend.WhooshEngine',
+        'PATH': os.path.join(os.path.dirname(__file__), 'whoosh_index'),
     },
 }
 

@@ -5,7 +5,7 @@ from utils.haystack.fields import ZhCharField
 
 
 class NoteIndex(indexes.SearchIndex, indexes.Indexable):
-    text = ZhCharField(document=True, use_template=True)
+    text = indexes.CharField(document=True, use_template=True)
     author = indexes.CharField(model_attr='user')
     pub_date = indexes.DateTimeField(model_attr='pub_date')
 

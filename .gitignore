@@ -4,3 +4,4 @@ database.sqlite3
 static/
 media/
 haystack_demo/xapian_index/
+haystack_demo/whoosh_index/
