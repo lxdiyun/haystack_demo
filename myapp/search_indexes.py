@@ -1,13 +1,14 @@
 from haystack import indexes
 from myapp.models import Note
 from django.utils.timezone import now
-from utils.haystack.fields import ZhCharField
 
 
 class NoteIndex(indexes.SearchIndex, indexes.Indexable):
     text = indexes.CharField(document=True, use_template=True)
     author = indexes.CharField(model_attr='user')
     pub_date = indexes.DateTimeField(model_attr='pub_date')
+    # auto complete content
+    content_auto = indexes.NgramField(model_attr='title')
 
     def get_model(self):
         return Note
