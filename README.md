@@ -9,6 +9,7 @@ Requirements
 * [django-haystack](http://haystacksearch.org/)
 * [xapian_backend](https://github.com/notanumber/xapian-haystack)
 * [whoosh](https://pypi.python.org/pypi/Whoosh/)
+* [dajax](http://www.dajaxproject.com/)
 
 Setup 
 -----
