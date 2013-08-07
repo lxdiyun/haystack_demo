@@ -166,6 +166,7 @@ HAYSTACK_CONNECTIONS = {
     'default': {
         'ENGINE': 'utils.haystack.backends.xapian_backend.XapianEngine',
         'PATH': os.path.join(os.path.dirname(__file__), 'xapian_index'),
+        'INCLUDE_SPELLING': True,
     },
 }
 os.environ["XAPIAN_CJK_NGRAM"] = "1"
@@ -173,6 +174,7 @@ os.environ["XAPIAN_CJK_NGRAM"] = "1"
 #    'default': {
 #        'ENGINE': 'utils.haystack.backends.zh_whoosh_backend.WhooshEngine',
 #        'PATH': os.path.join(os.path.dirname(__file__), 'whoosh_index'),
+#        'INCLUDE_SPELLING': True,
 #    },
 #}
 

@@ -7,7 +7,6 @@ from haystack.query import SearchQuerySet
 def autocomplete(request, inputs):
     sqs = SearchQuerySet().autocomplete(content_auto=inputs)[:5]
     suggestions = [result.content_auto for result in sqs]
-    print(inputs, suggestions)
     data = simplejson.dumps({
         'results': suggestions
     })
