@@ -8,7 +8,7 @@ class NoteIndex(indexes.SearchIndex, indexes.Indexable):
     author = indexes.CharField(model_attr='user')
     pub_date = indexes.DateTimeField(model_attr='pub_date')
     # auto complete content
-    content_auto = indexes.NgramField(model_attr='title')
+    content_auto = indexes.NgramField(use_template=True)
 
     def get_model(self):
         return Note

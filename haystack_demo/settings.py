@@ -179,3 +179,4 @@ os.environ["XAPIAN_CJK_NGRAM"] = "1"
 #}
 
 HAYSTACK_CUSTOM_HIGHLIGHTER = "utils.haystack.highlighting.CompleteHighlighter"
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
