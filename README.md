@@ -13,16 +13,19 @@ Requirements
 
 Setup 
 -----
+buid database
 ```shell
-./manage.py syndb
+./manage.py syncdb
 ```
 
+generate random data
 ```python
 from myapp import generate
 generate.gen_en(2000)
 generate.gen_zh(2000)
 ```
 
+build index manually
 ```shell
 ./manage.py rebuild_index
 ```

@@ -23,7 +23,7 @@
 	<h2>Search</h2>
 
 	<form id="id_search_form" method="get" class="form-horizontal" action=".">
-		<input name="q" id="id_q" type="text" class="span5" data-provide="typeahead">
+		<input name="q" id="id_q" type="text" class="span5" data-provide="typeahead" value="{{ form.cleaned_data.q }}">
 		<button type="submit" class="btn">Submit</button>
 
 		{% if query %}

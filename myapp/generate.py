@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from random import randrange
 from sys import stdout
 from django.utils.timezone import now
+from django.utils.encoding import smart_unicode
 
 
 def gen_random_string_en(dicts_array, size):
@@ -20,7 +21,7 @@ def gen_random_string_zh(dicts_array, size):
     dicts_size = len(dicts_array)
 
     while size > len(string):
-        string += dicts_array[randrange(dicts_size)]
+        string += smart_unicode(dicts_array[randrange(dicts_size)])
         if 0 == (len(string) % randrange(2, 5)):
             string += " "
 
